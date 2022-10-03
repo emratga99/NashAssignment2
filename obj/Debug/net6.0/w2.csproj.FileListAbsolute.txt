@@ -1,0 +1,15 @@
+C:\Users\do1lo\assignment\w2\bin\Debug\net6.0\w2.exe
+C:\Users\do1lo\assignment\w2\bin\Debug\net6.0\w2.deps.json
+C:\Users\do1lo\assignment\w2\bin\Debug\net6.0\w2.runtimeconfig.json
+C:\Users\do1lo\assignment\w2\bin\Debug\net6.0\w2.dll
+C:\Users\do1lo\assignment\w2\bin\Debug\net6.0\w2.pdb
+C:\Users\do1lo\assignment\w2\obj\Debug\net6.0\w2.csproj.AssemblyReference.cache
+C:\Users\do1lo\assignment\w2\obj\Debug\net6.0\w2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\do1lo\assignment\w2\obj\Debug\net6.0\w2.AssemblyInfoInputs.cache
+C:\Users\do1lo\assignment\w2\obj\Debug\net6.0\w2.AssemblyInfo.cs
+C:\Users\do1lo\assignment\w2\obj\Debug\net6.0\w2.csproj.CoreCompileInputs.cache
+C:\Users\do1lo\assignment\w2\obj\Debug\net6.0\w2.dll
+C:\Users\do1lo\assignment\w2\obj\Debug\net6.0\refint\w2.dll
+C:\Users\do1lo\assignment\w2\obj\Debug\net6.0\w2.pdb
+C:\Users\do1lo\assignment\w2\obj\Debug\net6.0\w2.genruntimeconfig.cache
+C:\Users\do1lo\assignment\w2\obj\Debug\net6.0\ref\w2.dll
