@@ -14,15 +14,16 @@ namespace Assignment2
             }
             static public ClassMember FindOldestOne(List<ClassMember> classMembers){
                 if(classMembers.Count() >0){
-                    return classMembers.Where(o=>o.dateOfBirth == classMembers.Select(o=>o.dateOfBirth).Max()).First();
+                    return classMembers.Where(o=>o.dateOfBirth == classMembers.Select(o=>o.dateOfBirth).Min()).First();
                 }
                     return new ClassMember();
             }   
             static public ClassMember FindFirstOneBornInHanoi(List<ClassMember> classMembers)
             {
-                if (classMembers.Count() > 0)
-                    classMembers.Where(o=>o.dateOfBirth == classMembers.Where(o=>o.birthPlace.ToLower().Contains("ha noi"))
-                    .Select(o=>o.dateOfBirth).Max()).First();
+            if (classMembers.Count() > 0) { 
+                return classMembers.Where(o => o.dateOfBirth == classMembers.Where(o => o.birthPlace.ToLower().Contains("ha noi", StringComparison.CurrentCultureIgnoreCase))
+                    .Select(o => o.dateOfBirth).Min()).First();
+            }
                 return new ClassMember();
             }
         }
