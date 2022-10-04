@@ -9,31 +9,20 @@ namespace Assignment2
             static public List<ClassMember> getAllMaleMembers(List<ClassMember> classMembers){
             var maleMemberList = new List<ClassMember>();
             if(classMembers.Count() >0)
-            foreach(var member in classMembers){
-                if(member.gender == EnumGender.MALE)
-                maleMemberList.Add(member);
-            }
+                return classMembers.Where(o=>o.gender == EnumGender.MALE).ToList();
             return maleMemberList;
             }
             static public ClassMember FindOldestOne(List<ClassMember> classMembers){
                 if(classMembers.Count() >0){
-                    int index = 0; 
-                    for(int i = 0; i < classMembers.Count();i++)
-                    if(DateTime.Compare(classMembers[index].dateOfBirth,classMembers[i].dateOfBirth) > 0 ){
-                        index = i;
-                    }
-                    return classMembers[index];
+                    return classMembers.Where(o=>o.dateOfBirth == classMembers.Select(o=>o.dateOfBirth).Max()).First();
                 }
                     return new ClassMember();
             }   
             static public ClassMember FindFirstOneBornInHanoi(List<ClassMember> classMembers)
             {
                 if (classMembers.Count() > 0)
-                    foreach(ClassMember member in classMembers)
-                        if (member.birthPlace.ToLower().Contains("ha noi"))
-                        {
-                            return member;
-                        }  
+                    classMembers.Where(o=>o.dateOfBirth == classMembers.Where(o=>o.birthPlace.ToLower().Contains("ha noi"))
+                    .Select(o=>o.dateOfBirth).Max()).First();
                 return new ClassMember();
             }
         }
