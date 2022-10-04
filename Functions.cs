@@ -7,24 +7,27 @@ namespace Assignment2
           // Find all male members method
         static class Methods{
             static public List<ClassMember> getAllMaleMembers(List<ClassMember> classMembers){
-            var maleMemberList = new List<ClassMember>();
-            if(classMembers.Count() >0)
-                return classMembers.Where(o=>o.gender == EnumGender.MALE).ToList();
-            return maleMemberList;
+            if(classMembers!= null){
+                return classMembers.FindAll(o=>o.Gender == EnumGender.MALE).ToList();
             }
+            return null;
+            }
+
             static public ClassMember FindOldestOne(List<ClassMember> classMembers){
-                if(classMembers.Count() >0){
-                    return classMembers.Where(o=>o.dateOfBirth == classMembers.Select(o=>o.dateOfBirth).Min()).First();
+                if(classMembers!= null){
+                    return classMembers.Where(o=>o.DateOfBirth == classMembers.Select(o=>o.DateOfBirth).Min()).First();
                 }
-                    return new ClassMember();
+                    return null;
             }   
+
             static public ClassMember FindFirstOneBornInHanoi(List<ClassMember> classMembers)
             {
-            if (classMembers.Count() > 0) { 
-                return classMembers.Where(o => o.dateOfBirth == classMembers.Where(o => o.birthPlace.ToLower().Contains("ha noi", StringComparison.CurrentCultureIgnoreCase))
-                    .Select(o => o.dateOfBirth).Min()).First();
+            if (classMembers!= null) { 
+                return classMembers.Where(o => o.DateOfBirth == classMembers.Where(o => o.BirthPlace.ToLower()
+                    .Contains("ha noi", StringComparison.CurrentCultureIgnoreCase))
+                    .Select(o => o.DateOfBirth).Min()).First();
             }
-                return new ClassMember();
+                    return null;
             }
         }
 }
