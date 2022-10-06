@@ -9,29 +9,27 @@ namespace Assignment2
     {
         static public List<ClassMember> getAllMaleMembers(List<ClassMember> classMembers)
         {
-            if (classMembers != null)
+            if (classMembers.Any())
             {
                 return classMembers.FindAll(o => o.Gender == EnumGender.MALE).ToList();
             }
-            return null;
+            return new List<ClassMember>();
         }
 
         static public ClassMember FindOldestOne(List<ClassMember> classMembers)
         {
-            if (classMembers != null)
+            if (classMembers.Any())
             {
-                return classMembers.Where(o => o.DateOfBirth == classMembers.Select(o => o.DateOfBirth).Min()).First();
+                return classMembers.FirstOrDefault(o => o.DateOfBirth == classMembers.Min(o => o.DateOfBirth));;
             }
             return null;
         }
 
         static public ClassMember FindFirstOneBornInHanoi(List<ClassMember> classMembers)
         {
-            if (classMembers != null)
+            if (classMembers.Any())
             {
-                return classMembers.Where(o => o.DateOfBirth == classMembers.Where(o => o.BirthPlace.ToLower()
-                    .Contains("ha noi", StringComparison.CurrentCultureIgnoreCase))
-                    .Select(o => o.DateOfBirth).Min()).First();
+                return classMembers.FirstOrDefault(o => o.BirthPlace.ToLower()== "ha noi");
             }
             return null;
         }
